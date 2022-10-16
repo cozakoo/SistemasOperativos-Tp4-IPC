@@ -1,0 +1,19 @@
+Martin, te dejo comentarios punto por punto:
+
+1.- Correcto pero falta dar un poco más de detalle. Por ejemplo, en las llamadas del tipo ***_open se podría aclarar que se envían flags para indicar el modo (lectura, escritura, ambas). En el caso de mmap se podría indicar que se usa para acceso a espacios de memoria compartida. Es importante aclarar también cuando una llamada al sistema bloquea el flujo de ejecución.
+
+2.- El programa 'cliente' está mal compilado. No existe el 'cliente.o' y se está generando con 'servidor.o'
+
+3	a.- Correcto.
+
+	b.- La lógica de manejo de colas de mensajes está bien y el programa A me funcionó bien, pero el programa B me da siempre un error al momento de leer de la cola de mensajes: 'No se pudo recibir el mensaje: Message too long'.
+
+	c.- Bien pero no me funcionó fácilmente este programa. El servidor me daba error 'Error al hacer bind: Operation not permitted'. Tuve que modificar la configuración de los sockets de PF_UNIX a AF_INET y logré que funcione.
+
+	La lógica está bien. Como mejora, estaría bueno que el server no se cierre cuando termina el programa cliente sino que se quede escuchando nuevas conexiones.
+
+4	a.- Bien pero bastante limitada la respuesta. ¿Cómo se usa?¿Para qué sirve?
+
+	b.- No entregado.
+
+	c.- No entregado.
